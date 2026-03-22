@@ -3,8 +3,11 @@ tasty_bytes_dbt_project:
   outputs:
     dev:
       type: snowflake
+      account: HS19185
+      user: CDWADMIN
       role: ACCOUNTADMIN
       warehouse: COMPUTE_WH
       database: SFTOM
       schema: PUBLIC
       threads: 8
+      
