@@ -1,0 +1,1208 @@
+
+
+============================== 07:00:08.169968 | 4338af02-d306-4d65-b0c9-f410bfe76be3 ==============================
+[0m07:00:08.169968 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:00:08.171103 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'log_format': 'default', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'static_parser': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m07:00:08.531501 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:00:09.087533 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:00:09.089039 [info ] [Dummy-1   ]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m07:00:10.720324 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:00:10.722798 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:00:10.762375 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:00:10.764984 [info ] [Dummy-1   ]: 
+[0m07:00:10.765607 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:00:10.766086 [info ] [Dummy-1   ]: 
+[0m07:00:10.766917 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:00:10.774416 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:00:10.883187 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:00:10.883846 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:00:10.884386 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:00:11.385783 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.501 seconds
+[0m07:00:11.391650 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:00:11.392307 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:00:11.511986 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.119 seconds
+[0m07:00:11.514907 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:00:11.515515 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:00:11.766596 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.250 seconds
+[0m07:00:11.777850 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:00:11.778687 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:00:11.779566 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:00:11.780427 [debug] [Thread-3 (]: Acquiring new snowflake connection 'model.tasty_bytes_dbt.stg_orders'
+[0m07:00:11.781056 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:00:11.781628 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:00:11.792976 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:00:11.797512 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:00:11.798934 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:00:11.799477 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:00:11.800561 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:00:11.801536 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:00:11.803140 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:00:11.804138 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes_dbt.int_sales'
+[0m07:00:11.804711 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes_dbt.int_sales
+[0m07:00:11.810763 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes_dbt.int_sales"
+[0m07:00:11.811572 [debug] [Thread-5 (]: Began executing node model.tasty_bytes_dbt.int_sales
+[0m07:00:11.812575 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:00:11.813758 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:00:11.814633 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.tasty_bytes_dbt.stg_customers, now model.tasty_bytes_dbt.fct_revenue)
+[0m07:00:11.815196 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.fct_revenue
+[0m07:00:11.820825 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.fct_revenue"
+[0m07:00:11.821634 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.fct_revenue
+[0m07:00:11.822621 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:00:11.825211 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:00:11.825796 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.fct_revenue' was properly closed.
+[0m07:00:11.826392 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:00:11.826891 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.int_sales' was properly closed.
+[0m07:00:11.828365 [debug] [Dummy-1   ]: Command end result
+[0m07:00:11.858107 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:00:11.860565 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:00:11.869705 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:00:11.871625 [debug] [Dummy-1   ]: Resource report: {"command_name": "compile", "command_success": true, "command_wall_clock_time": 3.7994995, "process_in_blocks": "0", "process_kernel_time": 1.02, "process_mem_max_rss": "498084", "process_out_blocks": "0", "process_user_time": 5.97}
+[0m07:00:11.872378 [debug] [Dummy-1   ]: Command `cli compile` succeeded at 07:00:11.872083 after 3.80 seconds
+[0m07:00:11.872948 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:25:39.346046 | ca4dfb2f-f278-4431-b9bc-5e719484ea50 ==============================
+[0m07:25:39.346046 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:25:39.347151 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m07:25:39.704164 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:25:40.257773 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:25:40.444090 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:25:40.444739 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:25:40.676676 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:25:40.679547 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:25:40.757019 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:25:40.759990 [info ] [Dummy-1   ]: 
+[0m07:25:40.760645 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:25:40.761131 [info ] [Dummy-1   ]: 
+[0m07:25:40.761999 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:25:40.769543 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:25:40.877980 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:25:40.878701 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:25:40.879257 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:25:41.487522 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.608 seconds
+[0m07:25:41.492001 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:25:41.509111 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:25:41.509725 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:25:41.510206 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:25:42.122946 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.612 seconds
+[0m07:25:42.128829 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:25:42.129451 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:25:42.259174 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.129 seconds
+[0m07:25:42.261961 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:25:42.262564 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:25:42.427139 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.164 seconds
+[0m07:25:42.437977 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:25:42.438802 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:25:42.439789 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:25:42.440636 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:25:42.441494 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:25:42.442308 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:25:42.442998 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:25:42.443623 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:25:42.454025 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:25:42.458824 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:25:42.459980 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:25:42.460667 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:25:42.548411 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:25:42.549366 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:25:42.551209 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:25:42.552119 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:25:42.552774 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+    order_id,
+    customer_id,
+    order_date,
+    order_amount
+FROM SFTOM.PUBLIC.ORDERS_RAW;
+[0m07:25:42.553400 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT *
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW;
+[0m07:25:42.553990 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:25:42.554547 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:25:43.121014 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c34401-0518-ef24-0000-e0c902991902
+[0m07:25:43.121779 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 9 at position 28 unexpected ';'.
+[0m07:25:43.127800 [debug] [Thread-3 (]: Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 28 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:25:43.131295 [error] [Thread-3 (]: 2 of 4 ERROR creating sql view model PUBLIC.stg_orders ......................... [[31mERROR[0m in 0.69s]
+[0m07:25:43.132263 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:25:43.133249 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 28 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql.
+[0m07:25:43.138835 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c34401-0518-ef24-0000-e0c9029918fe
+[0m07:25:43.139554 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 5 at position 31 unexpected ';'.
+[0m07:25:43.144933 [debug] [Thread-2 (]: Database Error in model stg_customers (models/stg_customers.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 5 at position 31 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:25:43.146218 [error] [Thread-2 (]: 1 of 4 ERROR creating sql view model PUBLIC.stg_customers ...................... [[31mERROR[0m in 0.70s]
+[0m07:25:43.147108 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:25:43.147933 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (models/stg_customers.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 5 at position 31 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql.
+[0m07:25:43.149414 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:25:43.150410 [info ] [Thread-5 (]: 3 of 4 SKIP relation PUBLIC.int_sales .......................................... [[33mSKIP[0m]
+[0m07:25:43.151112 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:25:43.151765 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'skipped'. 
+[0m07:25:43.152866 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:25:43.153707 [info ] [Thread-3 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:25:43.154362 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:25:43.154949 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:25:43.157975 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:25:43.158688 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:25:43.159192 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:25:43.159825 [info ] [Dummy-1   ]: 
+[0m07:25:43.160376 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 2.40 seconds (2.40s).
+[0m07:25:43.161613 [debug] [Dummy-1   ]: Command end result
+[0m07:25:43.193524 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:25:43.195924 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:25:43.203938 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:25:43.204513 [info ] [Dummy-1   ]: 
+[0m07:25:43.205165 [info ] [Dummy-1   ]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m07:25:43.205683 [info ] [Dummy-1   ]: 
+[0m07:25:43.206327 [error] [Dummy-1   ]:   Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 9 at position 28 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:25:43.206809 [info ] [Dummy-1   ]: 
+[0m07:25:43.207449 [error] [Dummy-1   ]:   Database Error in model stg_customers (models/stg_customers.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 5 at position 31 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:25:43.207955 [info ] [Dummy-1   ]: 
+[0m07:25:43.208521 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m07:25:43.210328 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 3.9614048, "process_in_blocks": "0", "process_kernel_time": 0.88, "process_mem_max_rss": "448320", "process_out_blocks": "0", "process_user_time": 5.06}
+[0m07:25:43.211019 [debug] [Dummy-1   ]: Command `cli build` failed at 07:25:43.210746 after 3.96 seconds
+[0m07:25:43.211621 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:43:10.702904 | 3f143a46-ddc4-44b1-889d-8fc957f5e300 ==============================
+[0m07:43:10.702904 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:43:10.703982 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'fail_fast': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt ', 'static_parser': 'True', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m07:43:11.070367 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:43:11.644097 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:43:11.832615 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m07:43:11.833606 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/stg_customers.sql
+[0m07:43:11.834297 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/stg_orders.sql
+[0m07:43:12.455616 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:43:12.458330 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:43:12.539239 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:43:12.542284 [info ] [Dummy-1   ]: 
+[0m07:43:12.542953 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:43:12.543432 [info ] [Dummy-1   ]: 
+[0m07:43:12.544250 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:43:12.551849 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:43:12.660471 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:43:12.661149 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:43:12.661656 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:43:13.076665 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.415 seconds
+[0m07:43:13.081332 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:43:13.098587 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:43:13.099251 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:43:13.099748 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:43:14.156527 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 1.057 seconds
+[0m07:43:14.162399 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:43:14.163057 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:43:14.253097 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.089 seconds
+[0m07:43:14.255891 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:43:14.256477 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:43:14.384712 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.128 seconds
+[0m07:43:14.396219 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:43:14.396990 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:43:14.397938 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:43:14.398843 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:43:14.399672 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:43:14.400336 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:43:14.400973 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:43:14.401540 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:43:14.413224 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:43:14.417798 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:43:14.418939 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:43:14.419660 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:43:14.500606 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:43:14.503185 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:43:14.504840 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:43:14.505837 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:43:14.506847 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:43:14.507450 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:43:14.508065 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+    order_id,
+    customer_id,
+    order_date,
+    order_amount
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:43:14.508887 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:43:15.055631 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c34413-0518-ef24-0000-e0c902991cba
+[0m07:43:15.056952 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on schema 'PUBLIC'.
+[0m07:43:15.060362 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c34413-0518-ef24-0000-e0c902991cbe
+[0m07:43:15.061302 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on schema 'PUBLIC'.
+[0m07:43:15.067142 [debug] [Thread-2 (]: Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:43:15.071609 [debug] [Thread-3 (]: Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:43:15.074783 [error] [Thread-2 (]: 1 of 4 ERROR creating sql view model PUBLIC.stg_customers ...................... [[31mERROR[0m in 0.67s]
+[0m07:43:15.075227 [error] [Thread-3 (]: 2 of 4 ERROR creating sql view model PUBLIC.stg_orders ......................... [[31mERROR[0m in 0.67s]
+[0m07:43:15.076131 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:43:15.076986 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:43:15.078043 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql.
+[0m07:43:15.079532 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql.
+[0m07:43:15.080982 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:43:15.081849 [info ] [Thread-5 (]: 3 of 4 SKIP relation PUBLIC.int_sales .......................................... [[33mSKIP[0m]
+[0m07:43:15.082506 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:43:15.083080 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'skipped'. 
+[0m07:43:15.084080 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:43:15.084857 [info ] [Thread-2 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:43:15.085475 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:43:15.086035 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:43:15.089082 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:43:15.089665 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:43:15.090133 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:43:15.090781 [info ] [Dummy-1   ]: 
+[0m07:43:15.091320 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 2.55 seconds (2.55s).
+[0m07:43:15.092575 [debug] [Dummy-1   ]: Command end result
+[0m07:43:15.123813 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:43:15.126331 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:43:15.134291 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:43:15.134866 [info ] [Dummy-1   ]: 
+[0m07:43:15.135525 [info ] [Dummy-1   ]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m07:43:15.136036 [info ] [Dummy-1   ]: 
+[0m07:43:15.136688 [error] [Dummy-1   ]:   Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:43:15.137181 [info ] [Dummy-1   ]: 
+[0m07:43:15.137781 [error] [Dummy-1   ]:   Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:43:15.138278 [info ] [Dummy-1   ]: 
+[0m07:43:15.138845 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m07:43:15.140688 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 4.5379853, "process_in_blocks": "0", "process_kernel_time": 1.19, "process_mem_max_rss": "509788", "process_out_blocks": "0", "process_user_time": 5.47}
+[0m07:43:15.141400 [debug] [Dummy-1   ]: Command `cli build` failed at 07:43:15.141117 after 4.54 seconds
+[0m07:43:15.141987 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:48:54.467656 | 4b0c155e-43b8-4316-aa4b-dba5f53886c0 ==============================
+[0m07:48:54.467656 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:48:54.468819 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m07:48:54.831692 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:48:55.389257 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:48:55.578640 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:48:55.579349 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:48:55.814483 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:48:55.817289 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:48:55.896524 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:48:55.899522 [info ] [Dummy-1   ]: 
+[0m07:48:55.900168 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:48:55.900654 [info ] [Dummy-1   ]: 
+[0m07:48:55.901522 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:48:55.909179 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:48:56.018369 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:48:56.019088 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:48:56.019610 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:48:56.659207 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.639 seconds
+[0m07:48:56.663803 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:48:56.681158 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:48:56.681904 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:48:56.682462 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:48:57.289441 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.607 seconds
+[0m07:48:57.295318 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:48:57.295946 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:48:57.449445 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.153 seconds
+[0m07:48:57.452286 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:48:57.452888 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:48:57.554666 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.101 seconds
+[0m07:48:57.565555 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:48:57.566340 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:48:57.567328 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:48:57.568179 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:48:57.569051 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:48:57.569734 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:48:57.570351 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:48:57.570945 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:48:57.581588 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:48:57.586524 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:48:57.587877 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:48:57.588711 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:48:57.680715 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:48:57.681459 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:48:57.683123 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:48:57.683946 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+    order_id,
+    customer_id,
+    order_date,
+    order_amount
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:48:57.684968 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:48:57.685597 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:48:57.686217 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:48:57.687096 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:48:58.301576 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c34418-0518-f049-0000-e0c902992d2a
+[0m07:48:58.302706 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on schema 'PUBLIC'.
+[0m07:48:58.303481 [debug] [Thread-2 (]: Snowflake adapter: Snowflake query id: 01c34418-0518-f049-0000-e0c902992d2e
+[0m07:48:58.306461 [debug] [Thread-2 (]: Snowflake adapter: Snowflake error: 003001 (42501): SQL access control error:
+Insufficient privileges to operate on schema 'PUBLIC'.
+[0m07:48:58.312898 [debug] [Thread-3 (]: Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:48:58.318465 [debug] [Thread-2 (]: Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:48:58.321127 [error] [Thread-3 (]: 2 of 4 ERROR creating sql view model PUBLIC.stg_orders ......................... [[31mERROR[0m in 0.74s]
+[0m07:48:58.321594 [error] [Thread-2 (]: 1 of 4 ERROR creating sql view model PUBLIC.stg_customers ...................... [[31mERROR[0m in 0.75s]
+[0m07:48:58.322512 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:48:58.323419 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:48:58.324480 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql.
+[0m07:48:58.325918 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_customers' to be skipped because of status 'error'.  Reason: Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql.
+[0m07:48:58.327445 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:48:58.328370 [info ] [Thread-5 (]: 3 of 4 SKIP relation PUBLIC.int_sales .......................................... [[33mSKIP[0m]
+[0m07:48:58.329052 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:48:58.329641 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'skipped'. 
+[0m07:48:58.330832 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:48:58.331762 [info ] [Thread-3 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:48:58.332523 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:48:58.333183 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:48:58.336361 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:48:58.337008 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:48:58.337519 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:48:58.338210 [info ] [Dummy-1   ]: 
+[0m07:48:58.338852 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 2.44 seconds (2.44s).
+[0m07:48:58.340225 [debug] [Dummy-1   ]: Command end result
+[0m07:48:58.371816 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:48:58.374283 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:48:58.382358 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:48:58.382963 [info ] [Dummy-1   ]: 
+[0m07:48:58.383652 [info ] [Dummy-1   ]: [31mCompleted with 2 errors, 0 partial successes, and 0 warnings:[0m
+[0m07:48:58.384183 [info ] [Dummy-1   ]: 
+[0m07:48:58.384832 [error] [Dummy-1   ]:   Database Error in model stg_orders (models/stg_orders.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:48:58.385330 [info ] [Dummy-1   ]: 
+[0m07:48:58.385930 [error] [Dummy-1   ]:   Database Error in model stg_customers (models/stg_customers.sql)
+  003001 (42501): SQL access control error:
+  Insufficient privileges to operate on schema 'PUBLIC'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_customers.sql
+[0m07:48:58.386409 [info ] [Dummy-1   ]: 
+[0m07:48:58.386961 [info ] [Dummy-1   ]: Done. PASS=0 WARN=0 ERROR=2 SKIP=2 TOTAL=4
+[0m07:48:58.388853 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 4.02067, "process_in_blocks": "0", "process_kernel_time": 0.91, "process_mem_max_rss": "453928", "process_out_blocks": "0", "process_user_time": 5.22}
+[0m07:48:58.389570 [debug] [Dummy-1   ]: Command `cli build` failed at 07:48:58.389295 after 4.02 seconds
+[0m07:48:58.390162 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:50:16.737263 | 68592641-f987-4785-b5c3-39b466d740a6 ==============================
+[0m07:50:16.737263 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:50:16.738468 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'warn_error': 'None', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': '/tmp/dbt/target/', 'invocation_command': 'dbt ', 'send_anonymous_usage_stats': 'False'}
+[0m07:50:17.107385 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:50:17.669517 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:50:17.858992 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m07:50:17.859668 [debug] [Dummy-1   ]: Partial parsing enabled, no changes found, skipping parsing
+[0m07:50:18.098644 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:50:18.101442 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:50:18.179811 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:50:18.182691 [info ] [Dummy-1   ]: 
+[0m07:50:18.183326 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:50:18.183813 [info ] [Dummy-1   ]: 
+[0m07:50:18.184708 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:50:18.192336 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:50:18.302834 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:50:18.303518 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:50:18.304035 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:50:19.344601 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 1.040 seconds
+[0m07:50:19.349423 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:50:19.367071 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:50:19.367713 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:50:19.368221 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:50:19.954946 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.586 seconds
+[0m07:50:19.961003 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:50:19.961680 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:50:20.073813 [debug] [ThreadPool]: SQL status: SUCCESS 5 in 0.111 seconds
+[0m07:50:20.076596 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:50:20.077219 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:50:20.212590 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.135 seconds
+[0m07:50:20.223874 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:50:20.224687 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:50:20.225748 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:50:20.226617 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:50:20.227447 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:50:20.228113 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:50:20.228783 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:50:20.229397 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:50:20.239924 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:50:20.244764 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:50:20.245950 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:50:20.246606 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:50:20.333669 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:50:20.330971 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:50:20.335446 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:50:20.336501 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:50:20.337215 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+    order_id,
+    customer_id,
+    order_date,
+    order_amount
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:50:20.337889 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:50:20.338539 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:50:20.339147 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:50:20.839198 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c3441a-0518-ef24-0000-e0c902991fd6
+[0m07:50:20.839988 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 7 at position 4
+invalid identifier 'ORDER_DATE'
+[0m07:50:20.846121 [debug] [Thread-3 (]: Database Error in model stg_orders (models/stg_orders.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'ORDER_DATE'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:50:20.849740 [error] [Thread-3 (]: 2 of 4 ERROR creating sql view model PUBLIC.stg_orders ......................... [[31mERROR[0m in 0.62s]
+[0m07:50:20.850722 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:50:20.851707 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (models/stg_orders.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'ORDER_DATE'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql.
+[0m07:50:21.088581 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.749 seconds
+[0m07:50:21.119754 [info ] [Thread-2 (]: 1 of 4 OK created sql view model PUBLIC.stg_customers .......................... [[32mSUCCESS 1[0m in 0.89s]
+[0m07:50:21.120833 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:50:21.122452 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:50:21.123422 [info ] [Thread-5 (]: 3 of 4 SKIP relation PUBLIC.int_sales .......................................... [[33mSKIP[0m]
+[0m07:50:21.124114 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:50:21.124736 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'skipped'. 
+[0m07:50:21.126015 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:50:21.126998 [info ] [Thread-3 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:50:21.127694 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:50:21.128346 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:50:21.131274 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:50:21.131891 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:50:21.132361 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:50:21.132963 [info ] [Dummy-1   ]: 
+[0m07:50:21.133534 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 2.95 seconds (2.95s).
+[0m07:50:21.134787 [debug] [Dummy-1   ]: Command end result
+[0m07:50:21.166828 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:50:21.169347 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:50:21.177579 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:50:21.178144 [info ] [Dummy-1   ]: 
+[0m07:50:21.178799 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:50:21.179315 [info ] [Dummy-1   ]: 
+[0m07:50:21.179970 [error] [Dummy-1   ]:   Database Error in model stg_orders (models/stg_orders.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'ORDER_DATE'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:50:21.180464 [info ] [Dummy-1   ]: 
+[0m07:50:21.180987 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=1 SKIP=2 TOTAL=4
+[0m07:50:21.182917 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 4.5447407, "process_in_blocks": "0", "process_kernel_time": 1.05, "process_mem_max_rss": "447428", "process_out_blocks": "0", "process_user_time": 5.14}
+[0m07:50:21.183609 [debug] [Dummy-1   ]: Command `cli build` failed at 07:50:21.183337 after 4.55 seconds
+[0m07:50:21.184182 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:54:04.867141 | fe153e31-b1a0-42b9-b48a-e95e3907124e ==============================
+[0m07:54:04.867141 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:54:04.868248 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'invocation_command': 'dbt ', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'introspect': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m07:54:05.224950 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:54:05.790020 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:54:05.976990 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m07:54:05.977930 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/stg_orders.sql
+[0m07:54:06.574609 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:06.577172 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:06.652186 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:54:06.654861 [info ] [Dummy-1   ]: 
+[0m07:54:06.655423 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:54:06.655883 [info ] [Dummy-1   ]: 
+[0m07:54:06.656678 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:54:06.663779 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:54:06.769748 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:54:06.770409 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:54:06.770925 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:07.294901 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.524 seconds
+[0m07:54:07.299227 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:54:07.315716 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:07.316349 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:07.316849 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:07.910933 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.594 seconds
+[0m07:54:07.916608 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:07.917198 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:54:08.056006 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.138 seconds
+[0m07:54:08.058876 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:08.059468 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:54:08.168245 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.108 seconds
+[0m07:54:08.180026 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:54:08.180786 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:54:08.181695 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:54:08.182523 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:54:08.183349 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:54:08.184002 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:54:08.184618 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:54:08.185184 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:54:08.195509 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:08.201362 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:08.202457 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:54:08.203057 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:54:08.282765 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:08.283208 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:08.284885 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:08.285631 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:54:08.286603 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:08.287217 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:54:08.287825 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+   ORDER_ID,
+   CUSTOMER_ID,
+   ITEM_ID,
+   ORDER_TS, 
+   QUANTITY,
+   UNIT_PRICE
+SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:54:08.288642 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:54:08.837523 [debug] [Thread-3 (]: Snowflake adapter: Snowflake query id: 01c3441e-0518-f049-0000-e0c902992f9e
+[0m07:54:08.838252 [debug] [Thread-3 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 11 at position 5 unexpected '.'.
+[0m07:54:08.844359 [debug] [Thread-3 (]: Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 11 at position 5 unexpected '.'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:54:08.847594 [error] [Thread-3 (]: 2 of 4 ERROR creating sql view model PUBLIC.stg_orders ......................... [[31mERROR[0m in 0.66s]
+[0m07:54:08.848676 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:54:08.849663 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.stg_orders' to be skipped because of status 'error'.  Reason: Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 11 at position 5 unexpected '.'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql.
+[0m07:54:09.372010 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.085 seconds
+[0m07:54:09.405188 [info ] [Thread-2 (]: 1 of 4 OK created sql view model PUBLIC.stg_customers .......................... [[32mSUCCESS 1[0m in 1.22s]
+[0m07:54:09.406181 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:54:09.407579 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:54:09.408684 [info ] [Thread-5 (]: 3 of 4 SKIP relation PUBLIC.int_sales .......................................... [[33mSKIP[0m]
+[0m07:54:09.409343 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:54:09.409931 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'skipped'. 
+[0m07:54:09.410972 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:54:09.411762 [info ] [Thread-3 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:54:09.412391 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:54:09.412967 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:54:09.416014 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:54:09.416634 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:54:09.417093 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:54:09.417674 [info ] [Dummy-1   ]: 
+[0m07:54:09.418191 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 2.76 seconds (2.76s).
+[0m07:54:09.419501 [debug] [Dummy-1   ]: Command end result
+[0m07:54:09.449707 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:09.451975 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:09.459738 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:54:09.460264 [info ] [Dummy-1   ]: 
+[0m07:54:09.460874 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:54:09.461366 [info ] [Dummy-1   ]: 
+[0m07:54:09.461999 [error] [Dummy-1   ]:   Database Error in model stg_orders (models/stg_orders.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 11 at position 5 unexpected '.'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/stg_orders.sql
+[0m07:54:09.462493 [info ] [Dummy-1   ]: 
+[0m07:54:09.463041 [info ] [Dummy-1   ]: Done. PASS=1 WARN=0 ERROR=1 SKIP=2 TOTAL=4
+[0m07:54:09.464789 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 4.694, "process_in_blocks": "0", "process_kernel_time": 1.24, "process_mem_max_rss": "504476", "process_out_blocks": "0", "process_user_time": 5.41}
+[0m07:54:09.465455 [debug] [Dummy-1   ]: Command `cli build` failed at 07:54:09.465193 after 4.69 seconds
+[0m07:54:09.466015 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:54:35.249883 | d1dd04d5-32f6-45f5-87e1-2fc0f1b81b93 ==============================
+[0m07:54:35.249883 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:54:35.250961 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'profiles_dir': '/tmp/dbt/', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt ', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m07:54:35.607534 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:54:36.165816 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:54:36.349998 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m07:54:36.350956 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/stg_orders.sql
+[0m07:54:36.948851 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:36.951520 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:37.027101 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:54:37.029875 [info ] [Dummy-1   ]: 
+[0m07:54:37.030485 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:54:37.031007 [info ] [Dummy-1   ]: 
+[0m07:54:37.031832 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:54:37.038924 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:54:37.143043 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:54:37.143691 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:54:37.144186 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:37.745572 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.601 seconds
+[0m07:54:37.749954 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:54:37.766377 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:37.766989 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:54:37.767477 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:54:38.380788 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.613 seconds
+[0m07:54:38.386532 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:38.387154 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:54:38.527012 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.139 seconds
+[0m07:54:38.529744 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:54:38.530304 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:54:38.640679 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.110 seconds
+[0m07:54:38.651294 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:54:38.651977 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:54:38.652823 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:54:38.653572 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:54:38.654323 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:54:38.654966 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:54:38.655573 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:54:38.656134 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:54:38.666322 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:38.672503 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:38.673622 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:54:38.674238 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:54:38.748448 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:38.753418 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:38.755093 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:54:38.755916 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:54:38.756912 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:54:38.757502 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:54:38.758106 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+   ORDER_ID,
+   CUSTOMER_ID,
+   ITEM_ID,
+   ORDER_TS, 
+   QUANTITY,
+   UNIT_PRICE
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:54:38.758892 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:54:39.561076 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.803 seconds
+[0m07:54:39.594794 [info ] [Thread-2 (]: 1 of 4 OK created sql view model PUBLIC.stg_customers .......................... [[32mSUCCESS 1[0m in 0.94s]
+[0m07:54:39.595774 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:54:39.656732 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.898 seconds
+[0m07:54:39.660327 [info ] [Thread-3 (]: 2 of 4 OK created sql view model PUBLIC.stg_orders ............................. [[32mSUCCESS 1[0m in 1.00s]
+[0m07:54:39.661230 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:54:39.662627 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:54:39.663606 [info ] [Thread-5 (]: 3 of 4 START sql view model PUBLIC.int_sales ................................... [RUN]
+[0m07:54:39.664402 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes_dbt.int_sales'
+[0m07:54:39.664952 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes_dbt.int_sales
+[0m07:54:39.673033 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes_dbt.int_sales"
+[0m07:54:39.673864 [debug] [Thread-5 (]: Began executing node model.tasty_bytes_dbt.int_sales
+[0m07:54:39.679416 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes_dbt.int_sales"
+[0m07:54:39.680803 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes_dbt.int_sales"
+[0m07:54:39.681422 [debug] [Thread-5 (]: On model.tasty_bytes_dbt.int_sales: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.int_sales"} */
+create or replace   view SFTOM.PUBLIC.int_sales
+  
+   as (
+    SELECT
+    o.order_id,
+    o.customer_id,
+    c.customer_name,
+    o.order_date,
+    o.order_amount
+FROM SFTOM.PUBLIC.stg_orders o
+JOIN SFTOM.PUBLIC.stg_customers c
+  ON o.customer_id = c.customer_id;
+[0m07:54:39.681978 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m07:54:40.118622 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c3441e-0518-ef24-0000-e0c9029931ca
+[0m07:54:40.119332 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 001003 (42000): SQL compilation error:
+syntax error line 12 at position 34 unexpected ';'.
+[0m07:54:40.125344 [debug] [Thread-5 (]: Database Error in model int_sales (models/int_sales.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 12 at position 34 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql
+[0m07:54:40.126638 [error] [Thread-5 (]: 3 of 4 ERROR creating sql view model PUBLIC.int_sales .......................... [[31mERROR[0m in 0.46s]
+[0m07:54:40.127526 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:54:40.128461 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'error'.  Reason: Database Error in model int_sales (models/int_sales.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 12 at position 34 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql.
+[0m07:54:40.130052 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:54:40.130957 [info ] [Thread-2 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:54:40.131591 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:54:40.132157 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:54:40.135213 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:54:40.135795 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:54:40.136271 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:54:40.136708 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.int_sales' was properly closed.
+[0m07:54:40.137290 [info ] [Dummy-1   ]: 
+[0m07:54:40.137805 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 3.11 seconds (3.11s).
+[0m07:54:40.139153 [debug] [Dummy-1   ]: Command end result
+[0m07:54:40.167806 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:54:40.170097 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:54:40.177898 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:54:40.178452 [info ] [Dummy-1   ]: 
+[0m07:54:40.179098 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:54:40.179604 [info ] [Dummy-1   ]: 
+[0m07:54:40.180241 [error] [Dummy-1   ]:   Database Error in model int_sales (models/int_sales.sql)
+  001003 (42000): SQL compilation error:
+  syntax error line 12 at position 34 unexpected ';'.
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql
+[0m07:54:40.180728 [info ] [Dummy-1   ]: 
+[0m07:54:40.181255 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=1 SKIP=1 TOTAL=4
+[0m07:54:40.183027 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 5.0279655, "process_in_blocks": "0", "process_kernel_time": 1.01, "process_mem_max_rss": "504496", "process_out_blocks": "0", "process_user_time": 5.34}
+[0m07:54:40.183699 [debug] [Dummy-1   ]: Command `cli build` failed at 07:54:40.183438 after 5.03 seconds
+[0m07:54:40.184253 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 07:57:04.562081 | 811446ec-ece5-4c34-89cb-34da71948da9 ==============================
+[0m07:57:04.562081 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m07:57:04.563266 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/tmp/dbt/', 'fail_fast': 'False', 'debug': 'False', 'log_path': '/tmp/dbt/logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'invocation_command': 'dbt ', 'introspect': 'True', 'static_parser': 'True', 'target_path': '/tmp/dbt/target/', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'False'}
+[0m07:57:04.944982 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m07:57:05.512365 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m07:57:05.705646 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m07:57:05.706644 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/int_sales.sql
+[0m07:57:06.361399 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:57:06.364390 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:57:06.448990 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m07:57:06.452715 [info ] [Dummy-1   ]: 
+[0m07:57:06.453428 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m07:57:06.453937 [info ] [Dummy-1   ]: 
+[0m07:57:06.454812 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m07:57:06.462561 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m07:57:06.571549 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m07:57:06.572227 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m07:57:06.572743 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:57:07.414965 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.842 seconds
+[0m07:57:07.419889 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m07:57:07.437907 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:57:07.438631 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m07:57:07.439188 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m07:57:08.035145 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.596 seconds
+[0m07:57:08.041242 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:57:08.041918 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m07:57:08.133071 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.090 seconds
+[0m07:57:08.136031 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m07:57:08.136670 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m07:57:08.270638 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.133 seconds
+[0m07:57:08.283117 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m07:57:08.283908 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m07:57:08.284890 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m07:57:08.285977 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m07:57:08.286917 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m07:57:08.287624 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m07:57:08.288319 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m07:57:08.289022 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m07:57:08.299840 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:57:08.306559 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:57:08.307870 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m07:57:08.308628 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m07:57:08.397660 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m07:57:08.393813 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m07:57:08.399476 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m07:57:08.400331 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+   ORDER_ID,
+   CUSTOMER_ID,
+   ITEM_ID,
+   ORDER_TS, 
+   QUANTITY,
+   UNIT_PRICE
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m07:57:08.401396 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m07:57:08.402039 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m07:57:08.402698 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m07:57:08.403603 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m07:57:09.283058 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 0.879 seconds
+[0m07:57:09.319840 [info ] [Thread-2 (]: 1 of 4 OK created sql view model PUBLIC.stg_customers .......................... [[32mSUCCESS 1[0m in 1.03s]
+[0m07:57:09.320913 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m07:57:09.383079 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.981 seconds
+[0m07:57:09.387204 [info ] [Thread-3 (]: 2 of 4 OK created sql view model PUBLIC.stg_orders ............................. [[32mSUCCESS 1[0m in 1.10s]
+[0m07:57:09.388215 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m07:57:09.389897 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m07:57:09.391071 [info ] [Thread-5 (]: 3 of 4 START sql view model PUBLIC.int_sales ................................... [RUN]
+[0m07:57:09.392018 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes_dbt.int_sales'
+[0m07:57:09.392614 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes_dbt.int_sales
+[0m07:57:09.401638 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes_dbt.int_sales"
+[0m07:57:09.402642 [debug] [Thread-5 (]: Began executing node model.tasty_bytes_dbt.int_sales
+[0m07:57:09.408969 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes_dbt.int_sales"
+[0m07:57:09.410544 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes_dbt.int_sales"
+[0m07:57:09.411215 [debug] [Thread-5 (]: On model.tasty_bytes_dbt.int_sales: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.int_sales"} */
+create or replace   view SFTOM.PUBLIC.int_sales
+  
+   as (
+    SELECT
+    o.order_id,
+    o.customer_id,
+    c.customer_name,
+    o.order_date,
+    o.order_amount
+FROM SFTOM.PUBLIC.stg_orders o
+JOIN SFTOM.PUBLIC.stg_customers c
+  ON o.customer_id = c.customer_id
+  );
+[0m07:57:09.411835 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m07:57:10.053070 [debug] [Thread-5 (]: Snowflake adapter: Snowflake query id: 01c34421-0518-ef24-0000-e0c902993306
+[0m07:57:10.053871 [debug] [Thread-5 (]: Snowflake adapter: Snowflake error: 000904 (42000): SQL compilation error: error line 7 at position 4
+invalid identifier 'C.CUSTOMER_NAME'
+[0m07:57:10.060215 [debug] [Thread-5 (]: Database Error in model int_sales (models/int_sales.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'C.CUSTOMER_NAME'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql
+[0m07:57:10.061760 [error] [Thread-5 (]: 3 of 4 ERROR creating sql view model PUBLIC.int_sales .......................... [[31mERROR[0m in 0.67s]
+[0m07:57:10.062746 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m07:57:10.063752 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.int_sales' to be skipped because of status 'error'.  Reason: Database Error in model int_sales (models/int_sales.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'C.CUSTOMER_NAME'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql.
+[0m07:57:10.065551 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m07:57:10.066571 [info ] [Thread-2 (]: 4 of 4 SKIP relation PUBLIC.fct_revenue ........................................ [[33mSKIP[0m]
+[0m07:57:10.067308 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m07:57:10.067942 [debug] [Thread-8 (]: Marking all children of 'model.tasty_bytes_dbt.fct_revenue' to be skipped because of status 'skipped'. 
+[0m07:57:10.071884 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m07:57:10.072700 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_orders' was properly closed.
+[0m07:57:10.073267 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m07:57:10.073757 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.int_sales' was properly closed.
+[0m07:57:10.074432 [info ] [Dummy-1   ]: 
+[0m07:57:10.075095 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 3.62 seconds (3.62s).
+[0m07:57:10.076586 [debug] [Dummy-1   ]: Command end result
+[0m07:57:10.106949 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m07:57:10.109521 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m07:57:10.117986 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m07:57:10.118633 [info ] [Dummy-1   ]: 
+[0m07:57:10.119294 [info ] [Dummy-1   ]: [31mCompleted with 1 error, 0 partial successes, and 0 warnings:[0m
+[0m07:57:10.119841 [info ] [Dummy-1   ]: 
+[0m07:57:10.120525 [error] [Dummy-1   ]:   Database Error in model int_sales (models/int_sales.sql)
+  000904 (42000): SQL compilation error: error line 7 at position 4
+  invalid identifier 'C.CUSTOMER_NAME'
+  compiled code at /tmp/dbt/target/run/tasty_bytes_dbt/models/int_sales.sql
+[0m07:57:10.121061 [info ] [Dummy-1   ]: 
+[0m07:57:10.121626 [info ] [Dummy-1   ]: Done. PASS=2 WARN=0 ERROR=1 SKIP=1 TOTAL=4
+[0m07:57:10.123545 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": false, "command_wall_clock_time": 5.662137, "process_in_blocks": "0", "process_kernel_time": 1.08, "process_mem_max_rss": "498768", "process_out_blocks": "0", "process_user_time": 5.58}
+[0m07:57:10.124278 [debug] [Dummy-1   ]: Command `cli build` failed at 07:57:10.123993 after 5.66 seconds
+[0m07:57:10.124875 [debug] [Dummy-1   ]: Flushing usage events
+
+
+============================== 08:03:53.842761 | f36b38d6-8330-4c1e-b710-8961c9a3938b ==============================
+[0m08:03:53.842761 [info ] [Dummy-1   ]: Running with dbt=1.9.4
+[0m08:03:53.843976 [debug] [Dummy-1   ]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': '/tmp/dbt/logs', 'debug': 'False', 'profiles_dir': '/tmp/dbt/', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'invocation_command': 'dbt ', 'introspect': 'True', 'target_path': '/tmp/dbt/target/', 'log_format': 'default', 'send_anonymous_usage_stats': 'False'}
+[0m08:03:54.222063 [info ] [Dummy-1   ]: Registered adapter: snowflake=1.9.2
+[0m08:03:54.790095 [debug] [Dummy-1   ]: checksum: 53ed91fada2233efb98368d1716b44ab532c83a9c293cf1890b7905d5b45fb25, vars: {}, profile: , target: dev, version: 1.9.4
+[0m08:03:54.980098 [debug] [Dummy-1   ]: Partial parsing enabled: 0 files deleted, 0 files added, 2 files changed.
+[0m08:03:54.981099 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/fct_revenue.sql
+[0m08:03:54.981796 [debug] [Dummy-1   ]: Partial parsing: updated file: tasty_bytes_dbt://models/int_sales.sql
+[0m08:03:55.628814 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:03:55.631658 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:03:55.713840 [info ] [Dummy-1   ]: Found 4 models, 474 macros
+[0m08:03:55.716791 [info ] [Dummy-1   ]: 
+[0m08:03:55.717432 [info ] [Dummy-1   ]: Concurrency: 4 threads (target='dev')
+[0m08:03:55.717916 [info ] [Dummy-1   ]: 
+[0m08:03:55.718779 [debug] [Dummy-1   ]: Acquiring new snowflake connection 'master'
+[0m08:03:55.726362 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM'
+[0m08:03:55.834098 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM"
+[0m08:03:55.834764 [debug] [ThreadPool]: On list_SFTOM: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM"} */
+show terse schemas in database SFTOM
+    limit 10000
+[0m08:03:55.835272 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:03:56.494319 [debug] [ThreadPool]: SQL status: SUCCESS 6 in 0.659 seconds
+[0m08:03:56.499193 [debug] [ThreadPool]: Acquiring new snowflake connection 'list_SFTOM_PUBLIC'
+[0m08:03:56.516526 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m08:03:56.517177 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session set quoted_identifiers_ignore_case = false;
+[0m08:03:56.517691 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m08:03:57.088681 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.571 seconds
+[0m08:03:57.094679 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m08:03:57.095328 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+show objects in SFTOM.PUBLIC
+    limit 10000
+    
+;
+[0m08:03:57.256143 [debug] [ThreadPool]: SQL status: SUCCESS 7 in 0.160 seconds
+[0m08:03:57.259093 [debug] [ThreadPool]: Using snowflake connection "list_SFTOM_PUBLIC"
+[0m08:03:57.259759 [debug] [ThreadPool]: On list_SFTOM_PUBLIC: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "connection_name": "list_SFTOM_PUBLIC"} */
+alter session unset quoted_identifiers_ignore_case;
+[0m08:03:57.400128 [debug] [ThreadPool]: SQL status: SUCCESS 1 in 0.140 seconds
+[0m08:03:57.412446 [debug] [Thread-2 (]: Began running node model.tasty_bytes_dbt.stg_customers
+[0m08:03:57.413265 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.stg_orders
+[0m08:03:57.414261 [info ] [Thread-2 (]: 1 of 4 START sql view model PUBLIC.stg_customers ............................... [RUN]
+[0m08:03:57.415129 [info ] [Thread-3 (]: 2 of 4 START sql view model PUBLIC.stg_orders .................................. [RUN]
+[0m08:03:57.416000 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly list_SFTOM_PUBLIC, now model.tasty_bytes_dbt.stg_customers)
+[0m08:03:57.416699 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly list_SFTOM, now model.tasty_bytes_dbt.stg_orders)
+[0m08:03:57.417351 [debug] [Thread-2 (]: Began compiling node model.tasty_bytes_dbt.stg_customers
+[0m08:03:57.417948 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.stg_orders
+[0m08:03:57.430141 [debug] [Thread-2 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_customers"
+[0m08:03:57.435096 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.stg_orders"
+[0m08:03:57.436401 [debug] [Thread-2 (]: Began executing node model.tasty_bytes_dbt.stg_customers
+[0m08:03:57.442783 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.stg_orders
+[0m08:03:57.520624 [debug] [Thread-2 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_customers"
+[0m08:03:57.524301 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.stg_orders"
+[0m08:03:57.526153 [debug] [Thread-2 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_customers"
+[0m08:03:57.526942 [debug] [Thread-2 (]: On model.tasty_bytes_dbt.stg_customers: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_customers"} */
+create or replace   view SFTOM.PUBLIC.stg_customers
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    CITY,
+    STATE,
+    COUNTRY
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
+  );
+[0m08:03:57.528124 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.stg_orders"
+[0m08:03:57.528824 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m08:03:57.529488 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.stg_orders: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.stg_orders"} */
+create or replace   view SFTOM.PUBLIC.stg_orders
+  
+   as (
+    SELECT
+   ORDER_ID,
+   CUSTOMER_ID,
+   ITEM_ID,
+   ORDER_TS, 
+   QUANTITY,
+   UNIT_PRICE
+FROM SFTOM.PUBLIC.ORDERS_RAW
+  );
+[0m08:03:57.530386 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m08:03:58.501201 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.971 seconds
+[0m08:03:58.540304 [info ] [Thread-3 (]: 2 of 4 OK created sql view model PUBLIC.stg_orders ............................. [[32mSUCCESS 1[0m in 1.12s]
+[0m08:03:58.541318 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.stg_orders
+[0m08:03:58.868322 [debug] [Thread-2 (]: SQL status: SUCCESS 1 in 1.339 seconds
+[0m08:03:58.872330 [info ] [Thread-2 (]: 1 of 4 OK created sql view model PUBLIC.stg_customers .......................... [[32mSUCCESS 1[0m in 1.46s]
+[0m08:03:58.873280 [debug] [Thread-2 (]: Finished running node model.tasty_bytes_dbt.stg_customers
+[0m08:03:58.874841 [debug] [Thread-5 (]: Began running node model.tasty_bytes_dbt.int_sales
+[0m08:03:58.875978 [info ] [Thread-5 (]: 3 of 4 START sql view model PUBLIC.int_sales ................................... [RUN]
+[0m08:03:58.876866 [debug] [Thread-5 (]: Acquiring new snowflake connection 'model.tasty_bytes_dbt.int_sales'
+[0m08:03:58.877435 [debug] [Thread-5 (]: Began compiling node model.tasty_bytes_dbt.int_sales
+[0m08:03:58.883963 [debug] [Thread-5 (]: Writing injected SQL for node "model.tasty_bytes_dbt.int_sales"
+[0m08:03:58.884890 [debug] [Thread-5 (]: Began executing node model.tasty_bytes_dbt.int_sales
+[0m08:03:58.891150 [debug] [Thread-5 (]: Writing runtime sql for node "model.tasty_bytes_dbt.int_sales"
+[0m08:03:58.892719 [debug] [Thread-5 (]: Using snowflake connection "model.tasty_bytes_dbt.int_sales"
+[0m08:03:58.893394 [debug] [Thread-5 (]: On model.tasty_bytes_dbt.int_sales: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.int_sales"} */
+create or replace   view SFTOM.PUBLIC.int_sales
+  
+   as (
+    SELECT
+    o.ORDER_ID,
+    o.CUSTOMER_ID,
+    c.FIRST_NAME,
+    c.LAST_NAME,
+    o.ORDER_TS,
+    o.QUANTITY,
+    o.UNIT_PRICE
+FROM SFTOM.PUBLIC.stg_orders o
+JOIN SFTOM.PUBLIC.stg_customers c
+  ON o.CUSTOMER_ID = c.CUSTOMER_ID
+  );
+[0m08:03:58.893990 [debug] [Thread-5 (]: Opening a new connection, currently in state init
+[0m08:04:00.060630 [debug] [Thread-5 (]: SQL status: SUCCESS 1 in 1.166 seconds
+[0m08:04:00.064532 [info ] [Thread-5 (]: 3 of 4 OK created sql view model PUBLIC.int_sales .............................. [[32mSUCCESS 1[0m in 1.19s]
+[0m08:04:00.065506 [debug] [Thread-5 (]: Finished running node model.tasty_bytes_dbt.int_sales
+[0m08:04:00.066825 [debug] [Thread-3 (]: Began running node model.tasty_bytes_dbt.fct_revenue
+[0m08:04:00.067973 [info ] [Thread-3 (]: 4 of 4 START sql view model PUBLIC.fct_revenue ................................. [RUN]
+[0m08:04:00.068969 [debug] [Thread-3 (]: Re-using an available connection from the pool (formerly model.tasty_bytes_dbt.stg_orders, now model.tasty_bytes_dbt.fct_revenue)
+[0m08:04:00.069585 [debug] [Thread-3 (]: Began compiling node model.tasty_bytes_dbt.fct_revenue
+[0m08:04:00.075598 [debug] [Thread-3 (]: Writing injected SQL for node "model.tasty_bytes_dbt.fct_revenue"
+[0m08:04:00.076569 [debug] [Thread-3 (]: Began executing node model.tasty_bytes_dbt.fct_revenue
+[0m08:04:00.082612 [debug] [Thread-3 (]: Writing runtime sql for node "model.tasty_bytes_dbt.fct_revenue"
+[0m08:04:00.084111 [debug] [Thread-3 (]: Using snowflake connection "model.tasty_bytes_dbt.fct_revenue"
+[0m08:04:00.084787 [debug] [Thread-3 (]: On model.tasty_bytes_dbt.fct_revenue: /* {"app": "dbt", "dbt_version": "1.9.4", "profile_name": "default", "target_name": "dev", "node_id": "model.tasty_bytes_dbt.fct_revenue"} */
+create or replace   view SFTOM.PUBLIC.fct_revenue
+  
+   as (
+    SELECT
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME,
+    SUM(QUANTITY * UNIT_PRICE) AS TOTAL_REVENUE
+FROM SFTOM.PUBLIC.int_sales
+GROUP BY
+    CUSTOMER_ID,
+    FIRST_NAME,
+    LAST_NAME
+  );
+[0m08:04:00.085371 [debug] [Thread-3 (]: Opening a new connection, currently in state init
+[0m08:04:00.816979 [debug] [Thread-3 (]: SQL status: SUCCESS 1 in 0.731 seconds
+[0m08:04:00.820878 [info ] [Thread-3 (]: 4 of 4 OK created sql view model PUBLIC.fct_revenue ............................ [[32mSUCCESS 1[0m in 0.75s]
+[0m08:04:00.821863 [debug] [Thread-3 (]: Finished running node model.tasty_bytes_dbt.fct_revenue
+[0m08:04:00.825575 [debug] [Dummy-1   ]: Connection 'master' was properly closed.
+[0m08:04:00.826239 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.fct_revenue' was properly closed.
+[0m08:04:00.826715 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.stg_customers' was properly closed.
+[0m08:04:00.827166 [debug] [Dummy-1   ]: Connection 'model.tasty_bytes_dbt.int_sales' was properly closed.
+[0m08:04:00.827816 [info ] [Dummy-1   ]: 
+[0m08:04:00.828423 [info ] [Dummy-1   ]: Finished running 4 view models in 0 hours 0 minutes and 5.11 seconds (5.11s).
+[0m08:04:00.829970 [debug] [Dummy-1   ]: Command end result
+[0m08:04:00.862880 [debug] [Dummy-1   ]: Wrote artifact WritableManifest to /tmp/dbt/target/manifest.json
+[0m08:04:00.865538 [debug] [Dummy-1   ]: Wrote artifact SemanticManifest to /tmp/dbt/target/semantic_manifest.json
+[0m08:04:00.874114 [debug] [Dummy-1   ]: Wrote artifact RunExecutionResult to /tmp/dbt/target/run_results.json
+[0m08:04:00.874695 [info ] [Dummy-1   ]: 
+[0m08:04:00.875368 [info ] [Dummy-1   ]: [32mCompleted successfully[0m
+[0m08:04:00.875901 [info ] [Dummy-1   ]: 
+[0m08:04:00.876449 [info ] [Dummy-1   ]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m08:04:00.878532 [debug] [Dummy-1   ]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 7.13709, "process_in_blocks": "0", "process_kernel_time": 0.97, "process_mem_max_rss": "500200", "process_out_blocks": "0", "process_user_time": 5.83}
+[0m08:04:00.879288 [debug] [Dummy-1   ]: Command `cli build` succeeded at 08:04:00.879006 after 7.14 seconds
+[0m08:04:00.879887 [debug] [Dummy-1   ]: Flushing usage events

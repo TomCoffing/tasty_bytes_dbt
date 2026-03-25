@@ -3,8 +3,8 @@ SELECT
     FIRST_NAME,
     LAST_NAME,
     SUM(QUANTITY * UNIT_PRICE) AS TOTAL_REVENUE
-FROM {{ ref('int_sales') }}
+FROM SFTOM.PUBLIC.int_sales
 GROUP BY
     CUSTOMER_ID,
     FIRST_NAME,
-    LAST_NAME                             
+    LAST_NAME

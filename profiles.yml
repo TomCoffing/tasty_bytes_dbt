@@ -1,0 +1,14 @@
+# Changing profile name from tasty_bytes_dbt_ws to default
+default:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: hs19185
+      user: cdwadmin
+      role: SYSADMIN
+      database: SFTOM
+      warehouse: COMPUTE_WH
+      schema: PUBLIC
+      threads: 4
+  

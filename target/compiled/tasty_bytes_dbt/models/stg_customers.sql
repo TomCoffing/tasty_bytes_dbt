@@ -5,4 +5,4 @@ SELECT
     CITY,
     STATE,
     COUNTRY
-FROM SFTOM.PUBLIC.CUSTOMERS_RAW                                       
+FROM SFTOM.PUBLIC.CUSTOMERS_RAW
