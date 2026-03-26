@@ -1,22 +1,38 @@
 version: 2
 
 models:
+
   - name: stg_customers
+    description: "Staging table that cleans and standardizes raw customer data from SFTOM.PUBLIC.CUSTOMERS_RAW"
     columns:
       - name: customer_id
+        description: "Unique identifier for each customer"
         tests:
           - not_null
           - unique
 
   - name: stg_orders
+    description: "Staging table that prepares raw order data from SFTOM.PUBLIC.ORDERS_RAW"
     columns:
       - name: order_id
+        description: "Unique identifier for each order"
         tests:
           - not_null
           - unique
 
   - name: int_sales
+    description: "Intermediate model joining customers and orders to create a unified sales dataset"
     columns:
       - name: customer_id
+        description: "Customer identifier used to join customer and order data"
         tests:
-          - not_null                                     
+          - not_null
+
+    - name: fct_revenue
+    description: "Final fact table summarizing total revenue by customer"
+    columns:
+      - name: customer_id
+        description: "Customer identifier"
+      - name: total_revenue
+        description: "Total revenue aggregated per customer"
+        
