@@ -28,7 +28,7 @@ models:
         tests:
           - not_null
 
-    - name: fct_revenue
+  - name: fct_revenue
     description: "Final fact table summarizing total revenue by customer"
     columns:
       - name: customer_id
